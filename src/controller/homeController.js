@@ -1,4 +1,5 @@
 import db from '../models/index'; //import database
+import user from '../models/user';
 import CRUDService from '../services/CRUDService' //import service
 //hàm getHomePage
 let getHomePage = async (req, res) => {
@@ -47,11 +48,8 @@ let getEditCRUD = async (req, res) => {
     let userId = req.query.id;
     if (userId) { //check Id
         let userData = await CRUDService.getUserInfoById(userId);
-        // console.log(' ');
-        // console.log(userData);
-        // console.log('
         return res.render('users/editUser.ejs', {
-            data: userData
+            user: userData
         });
     } else {
         return res.send('không lấy được id');

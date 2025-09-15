@@ -4,7 +4,7 @@ let router = express.Router(); //khởi tạo Route
 let initWebRoutes = (app) => {
 //cách 1:
 router.get('/', (req, res) => {
-return res.send('Nguyễn Hữu Trung');
+return res.send('Trần Trọng Nghĩa');
 });
 //cách 2: gọi hàm trong controller
 router.get('/home', homeController.getHomePage); //url cho trang chủ
@@ -15,6 +15,7 @@ router.get('/get-crud', homeController.getFindAllCrud) //url lấy findAll
 router.get('/edit-crud', homeController.getEditCRUD); //url get editcrud
 router.post('/put-crud', homeController.putCRUD); //url put crud
 router.get('/delete-crud', homeController.deleteCRUD); //url get delete crud
+router.post('/update-user/:id', homeController.putCRUD);
 return app.use("/", router); //url mặc định
 }
 module.exports = initWebRoutes;

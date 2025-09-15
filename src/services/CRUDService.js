@@ -87,9 +87,10 @@ let updateUser = (data) => {
             } else {
             }
             resolve(); //hàm trả về kết quả rồng
-        } catch (e) {
+        } catch (error) {
+            reject(error)
+
         }
-        reject(e)
     })
 }
 //hàm xóa user
